@@ -1,8 +1,7 @@
 // @ts-ignore
-import Encryptdata from "../types/encryptdata.ts";
 
 const f = performance.now();
-const encryptor = (encryptingData: Encryptdata, secret: string, salt: string=null) => {
+const encryptor = async (encryptingData, secret: string, salt: string=null) => {
     const decrypt: string = String(encryptingData) || JSON.stringify(encryptingData);
     let secret_number: number = Number(secret.substring(0, secret.length - 1));
     const format: string = secret[secret.length - 1];
