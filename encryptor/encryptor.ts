@@ -80,4 +80,5 @@ const encryptor = (encryptingData: Encryptdata, secret: string, salt: string=nul
     return error ? error : encryptedData;
 }
 const e = performance.now();
-export de
+
+export default encryptor;
