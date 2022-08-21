@@ -1,7 +1,10 @@
 // @ts-ignore
 
+import CA from "./characterArray.ts";
+
 const f = performance.now();
 const encryptor = async (encryptingData, secret: string, salt: string=null) => {
+    let len = encryptingData.length;
     const decrypt: string = String(encryptingData) || JSON.stringify(encryptingData);
     let secret_number: number = Number(secret.substring(0, secret.length - 1));
     const format: string = secret[secret.length - 1];
@@ -18,16 +21,7 @@ const encryptor = async (encryptingData, secret: string, salt: string=null) => {
         })()
     };
 
-    const CA = [
-        "a", "b", "c", "d", "e", "f", "g", "h",
-        "i", "j", "k", "l", "m", "n", "o", "p",
-        "q", "r", "s", "t", "u", "v", "w", "x",
-        "y", "z", "0", "1", "2", "3", "4", "5",
-        "6", "7", "8", "9", "A", "B", "C", "D",
-        "E", "F", "G", "H", "I", "J", "K", "L",
-        "M", "N", "O", "P", "Q", "R", "S", "T",
-        "U", "V", "W", "X", "Y", "Z"
-    ];
+
     salt && ((): void => {
         for (let sc of salt) {
             CA.push(sc);

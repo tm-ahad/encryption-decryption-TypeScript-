@@ -1,3 +1,4 @@
+// @ts-ignore
 import encryptor from "../encryptor.ts";
 
 const hashByRandomSecrets = async (hashingData) => {
@@ -13,5 +14,6 @@ const hashByRandomSecrets = async (hashingData) => {
 };
 
 for (let i = 0; i < 999; i++){
+    // @ts-ignore
     console.log(await hashByRandomSecrets('{name: "Tahmid", age: 9, email: "tm.ahad.07@gmail.com"}'))
 }
